@@ -3,20 +3,23 @@ import argparse
 import re
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--input", required=True,
-    help="path to iBug 300-W data split XML file")
-ap.add_argument("-t", "--output", required=True,
-    help="path output data split XML file")
+ap.add_argument("-i", "--input", required=True, help="path to iBug 300-W data split XML file")
+# --input : XML파일 위치
+ap.add_argument("-t", "--output", required=True, help="path output data split XML file")
+# --output : 눈썹 & 눈의 정보만 담길 XML파일 위치
+
 args = vars(ap.parse_args())
 
 # in the iBUG 300-W dataset, each (x, y)-coordinate maps to a specific
 # facial feature (i.e., eye, mouth, nose, etc.) -- in order to train a
-# dlib shape predictor on *just* the eyes & eyebrows, we must first define the
-# integer indexes that belong to the eyes & eyebrows
+# dlib shape predictor on *just* the eyes and eyebrows, we must first define the
+# integer indexes that belong to the eyes and eyebrows
 
 eyebrows = list(range(17,27))
 eyes = list(range(36,48))
-LANDMARKS = set(eyebrows + eyes)
+
+LANDMARKS = set(eyebrows+eyes)
+# {17,18,19,20,21,22,23,24,25,26,36,37,38,39,40,41,42,43,44,45,46,47}
 
 # to easily parse out the eye locations from the XML file we can
 # utilize regular expressions to determine if there is a 'part'
@@ -51,4 +54,3 @@ for row in rows:
             output.write("{}\n".format(row))
 # close the output file
 output.close()
-
