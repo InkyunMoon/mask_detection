@@ -32,7 +32,7 @@ to 0 will help our model generalize but will require us to have
 training data in the order of 1000s of data points
 '''
 
-options.nu = 0.1
+options.nu = 0.25
 
 '''
 the number of cascades used to train the shape predictor -- this
@@ -40,7 +40,7 @@ parameter has a *dramatic* impact on both the *accuracy* and *output
 size* of your model; the more cascades you have, the more accurate
 your model can potentially be, but also the *larger* the output size
 '''
-options.cascade_depth = 15
+options.cascade_depth = 8
 
 '''
 number of pixels used to generate features for the random trees at
@@ -50,7 +50,7 @@ problem, otherwise smaller values for resource constrained/embedded
 devices
 '''
 
-options.feature_pool_size = 400
+options.feature_pool_size = 1000
 
 '''
 selects best features at each cascade when training -- the larger
@@ -58,7 +58,7 @@ this value is, the *longer* it will take to train but (potentially)
 the more *accurate* your model will be
 '''
 
-options.num_test_splits = 50
+options.num_test_splits = 300
 
 '''
 controls amount of "jitter" (i.e., data augmentation) when training
@@ -67,7 +67,7 @@ deformations, thereby performing regularization and increasing the
 ability of our model to generalize
 '''
 
-options.oversampling_amount = 5
+options.oversampling_amount = 40
 
 '''
 amount of translation jitter to apply -- the dlib docs recommend
