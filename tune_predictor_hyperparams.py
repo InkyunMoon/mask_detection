@@ -70,13 +70,13 @@ procs = config.PROCS if config.PROCS > 0 else procs
 # initialize the list of dlib shape predictor hyperparameters that
 # we'll be tuning over
 hyperparams = {
-	"tree_depth": list(range(2, 8, 2)),
-	"nu": [0.01, 0.1, 0.25],
-	"cascade_depth": list(range(6, 16, 2)),
-	"feature_pool_size": [100, 250, 500, 750, 1000],
-	"num_test_splits": [20, 100, 300],
-	"oversampling_amount": [1, 20, 40],
-	"oversampling_translation_jitter": [0.0, 0.1, 0.25]
+	"tree_depth": list(range(4, 10, 2)),
+	"nu": [0.2, 0.3, 0.4],
+	"cascade_depth": list(range(8, 20, 2)),
+	"feature_pool_size": [1000],
+	"num_test_splits": [300],
+	"oversampling_amount": [40],
+	"oversampling_translation_jitter": [0.1, 0.25]
 }
 
 # construct the set of hyperparameter combinations and randomly

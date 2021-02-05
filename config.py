@@ -13,7 +13,7 @@ TEMP_MODEL_PATH = "temp.dat"
 # define the path to the output CSV file containing the results of
 # our experiments
 # 각 튜닝 결과가 저장될 csv파일
-CSV_PATH = "trials.csv"
+CSV_PATH = "trials2.csv"
 
 # define the path to the example image we'll be using to evaluate
 # inference speed using the shape predictor
@@ -27,6 +27,6 @@ PROCS = -1
 # define the maximum number of trials we'll be performing when tuning
 # our shape predictor hyperparameters
 # 여러 조합에 걸쳐서 성능을 측정할 것 - 최대 조합의 개수를 아래의 인자로 설정하여 성능을 측정할 것이다.
-MAX_TRIALS = 100
+MAX_TRIALS = 108
 
 
