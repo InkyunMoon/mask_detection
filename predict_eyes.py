@@ -1,4 +1,4 @@
-notion# import the necessary packages
+# import the necessary packages
 from imutils.video import VideoStream
 from imutils import face_utils
 import argparse
