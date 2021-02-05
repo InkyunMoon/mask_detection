@@ -7,7 +7,7 @@ TEST_PATH = os.path.join("/home/piai/Documents/ibug_300W_large_face_landmark_dat
 	"labels_ibug_300W_test_eyes.xml")
 	
 	
-# 하이퍼파라미터 튜닝에 상용될 임시 모델 파일 경로 - 앞서 만들었던 디폴트 모델
+# 하이퍼파라미터 튜닝에 사용될 임시 모델 파일 경로 - 앞서 만들었던 디폴트 모델
 TEMP_MODEL_PATH = "temp.dat"
 
 # define the path to the output CSV file containing the results of

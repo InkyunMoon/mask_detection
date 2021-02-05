@@ -72,7 +72,7 @@ procs = config.PROCS if config.PROCS > 0 else procs
 hyperparams = {
 	"tree_depth": list(range(4, 10, 2)),
 	"nu": [0.2, 0.3, 0.4],
-	"cascade_depth": list(range(8, 20, 2)),
+	"cascade_depth": list(range(12, 20, 2)),
 	"feature_pool_size": [1000],
 	"num_test_splits": [300],
 	"oversampling_amount": [40],
