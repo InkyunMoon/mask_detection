@@ -37,10 +37,12 @@ while True:
     	# print(rects): # to be deleted
         # convert the dlib rectangle into an OpenCV bounding box and
         # draw a bounding box surrounding the face
-        (x, y, w, h) = face_utils.rect_to_bb(rect)
+        
+        # (x, y, w, h) = face_utils.rect_to_bb(rect)
+        
         # rect_to_bb: 바운딩 박스를 받아서 (x,y,w,h)형식으로 변환
         
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        # cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
         
         # use our custom dlib shape predictor to predict the location
         # of our landmark coordinates, then convert the prediction to
