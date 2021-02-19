@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../algorithm_test"
+		},
+		{
+			"name": "Learning_OpenCV",
+			"path": "../Learning_OpenCV/Learning_OpenCV"
+		}
+	],
+	"settings": {}
+}
