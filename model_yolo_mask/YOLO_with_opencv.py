@@ -40,7 +40,7 @@ cap = cv2.VideoCapture(0)
 
 while True:
     success, frame = cap.read()
-    Height, width, channels = frame.shape
+    height, width, channels = frame.shape
     # frame.shape == (480, 640, 3)
 
     blob = cv2.dnn.blobFromImage(frame, 1 / 255.0, (320,320), (0,0,0), True, crop=False)
@@ -58,7 +58,8 @@ while True:
             classID = np.argmax(scores)
             confidence = scores[classID]
 
-            if confidence > args['confidence']:
+            #if confidence > args['confidence']:
+            if confidence > 0.5:
                 # box = detection[0:4] * np.array([W,H,W,H])
                 # (centerX, centerY, width, height) = box.astype('int')
 
@@ -72,26 +73,26 @@ while True:
                 w = int(detection[2] * width)
                 h = int(detection[3] * height)
 
-                x = int(center_x - w/2)
-                y = int(center_y - h/2)
+                x = int(centerX - w/2)
+                y = int(centerY - h/2)
             
                 boxes.append([x, y, w, h])
                 confidences.append(float(confidence))
                 classIDs.append(classID)
 
-    idxs = cv2.dnn.NMSBoxes(boxes, confidences, args['confidence'], args['threshold'])
-
-	if len(idxs) > 0:
-		# loop over the indexes we are keeping
-		for i in idxs.flatten():
-			# extract the bounding box coordinates
-			(x, y) = (boxes[i][0], boxes[i][1])
-			(w, h) = (boxes[i][2], boxes[i][3])
-			# draw a bounding box rectangle and label on the frame
-			color = [int(c) for c in COLORS[classIDs[i]]]
-			cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
-			text = "{}: {:.4f}".format(LABELS[classIDs[i]], confidences[i])
-			cv2.putText(frame, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+    #idxs = cv2.dnn.NMSBoxes(boxes, confidences, args['confidence'], args['threshold'])
+    idxs = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.3)
+    if len(idxs) > 0:
+        # loop over the indexes we are keeping
+        for i in idxs.flatten():
+        # extract the bounding box coordinates
+            (x, y) = (boxes[i][0], boxes[i][1])
+            (w, h) = (boxes[i][2], boxes[i][3])
+            # draw a bounding box rectangle and label on the frame
+            color = [int(c) for c in COLORS[classIDs[i]]]
+            cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
+            text = "{}: {:.4f}".format(LABELS[classIDs[i]], confidences[i])
+            cv2.putText(frame, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
     cv2.imshow('video', frame)
     if cv2.waitKey(1) == ord('q'):
         cv2.destroyAllWindows()
