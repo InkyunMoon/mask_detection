@@ -1,0 +1,6 @@
+classes= 2
+train  = data/golden_train_revise.txt
+valid  = data/golden_valid.txt
+names = data/mask_face.names
+backup = backup/
+

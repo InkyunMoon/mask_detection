@@ -55,11 +55,10 @@ while True:
         # use our custom dlib shape predictor to predict the location
         # of our landmark coordinates, then convert the prediction to
         # an easily parsable NumPy array
-        print(rect)
-        rect2 = [rect.left(), rect.top(), rect.right(), rect.bottom()]
+        # print(rect)
+        # rect2 = [rect.left(), rect.top(), rect.right(), rect.bottom()]
         rect3 = dlib.rectangle(int(rect2[0]),int(rect2[1]),int(rect2[2]),int(rect2[3])) 
-           
-        print(type(rect3))
+        # print(type(rect3))
         # shape = predictor(gray, rect)
         shape = predictor(gray, rect3)
         # print(shape)

@@ -23,7 +23,6 @@ weightsPath = os.path.sep.join([yolo_path, 'yolo-obj_last.weights'])
 configPath = os.path.sep.join([yolo_path, 'yolo-obj.cfg'])
 LABELS = open('/home/piai/Documents/darknet/model_yolo_mask/obj.names').read().strip().split('\n')
 
-
 # labelsPath = os.path.sep.join([args['yolo'], 'obj.names'])
 # LABELS = open(labelsPath).read().strip().split('\n') # 위 라벨 데이터의 디렉토리를 입력하면 라벨만 담긴 리스트 리턴
 
@@ -101,7 +100,7 @@ while True:
             shape = face_utils.shape_to_np(shape)
             #shape = predictor(i)
             #shape = face_utils.shape_to_np(shape)
-            #print(shape)
+            #print(shape) 
 
             # draw a bounding box rectangle and label on the frame
             color = [int(c) for c in COLORS[classIDs[i]]]
