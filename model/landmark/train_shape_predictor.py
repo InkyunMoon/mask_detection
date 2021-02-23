@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # import the necessary packages
 import multiprocessing
 import argparse
@@ -92,7 +91,6 @@ print(options)
 # train the shape predictor
 print("[INFO] training shape predictor...")
 dlib.train_shape_predictor(args["training"], args["model"], options)
-=======
 # import the necessary packages
 import multiprocessing
 import argparse
@@ -186,4 +184,3 @@ print(options)
 # train the shape predictor
 print("[INFO] training shape predictor...")
 dlib.train_shape_predictor(args["training"], args["model"], options)
->>>>>>> 991fbc77a3358d109ef0782c87475f26a2ce9552
