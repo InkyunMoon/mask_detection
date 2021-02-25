@@ -17,7 +17,7 @@ import os
 # args = vars(ap.parse_args())
 
 # temporary line
-yolo_path = '/home/piai/github/mask_detection/model/yolo'
+yolo_path = '/home/piai/github/mask_detection/model/yolo/170000/'
 lablsPath = os.path.sep.join([yolo_path,'170000.names'])
 weightsPath = os.path.sep.join([yolo_path, '170000.weights'])
 configPath = os.path.sep.join([yolo_path, '170000.cfg'])
