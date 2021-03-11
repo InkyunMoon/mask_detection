@@ -1,8 +1,7 @@
-# with_mask1 폴더의 jpg와 txt파일 개수가 맞지 않음을 확인하고 삭제하는 코드
 import os
-img_path = '/media/piai/SAMSUNG/labeling_data/mask_new_data_02.25/with_mask1/img/'
+path = '/home/piai/github/Yolo_mark/x64/Release/data/img'
 
-file_list = os.listdir(img_path)
+file_list = os.listdir(path)
 
 jpg_list = [file for file in file_list if file.endswith('.jpg')]
 txt_list = [file for file in file_list if file.endswith('.txt')]
